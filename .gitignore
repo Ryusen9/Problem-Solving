@@ -1,2 +1,7 @@
 Solve Screenshots
+<<<<<<< HEAD
 *exe
+=======
+*.exe
+.vscode
+>>>>>>> 29a0e559c9eb7c14da6713dd9bd22ccfda0001de
