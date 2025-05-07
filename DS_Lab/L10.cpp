@@ -13,7 +13,6 @@ public:
         }
         names.insert(names.begin() + i, newName);
     }
-
     int search(const string& name) {
         for (int i = 0; i < names.size(); i++) {
             if (names[i] == name) {
@@ -51,7 +50,6 @@ int main() {
     list.insert(name);
     cout << "Updated List: \n";
     list.display();
-
     int index = list.search(name);
     if (index != -1) {
         cout << "The name " << name << " is at position " << index << " in the list.\n";
