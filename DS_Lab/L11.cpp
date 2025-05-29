@@ -14,7 +14,7 @@ void readFromFile(vector<string>& list, const string& filename) {
 }
 void writeToFile(const vector<string>& list, const string& filename) {
     ofstream file(filename);
-    for (const string& word : list) {
+    for (const string& word : list) {1
         file << word << " ";
     }
     file.close();

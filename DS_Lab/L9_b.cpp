@@ -76,13 +76,13 @@ public:
 };
 int main() {
     BinarySearchTree bst;
-    bst.insert(50);
-    bst.insert(30);
-    bst.insert(20);
+    bst.insert(67);
+    bst.insert(98);
+    bst.insert(23);
+    bst.insert(33);
+    bst.insert(65);
+    bst.insert(100);
     bst.insert(40);
-    bst.insert(70);
-    bst.insert(60);
-    bst.insert(80);
     cout << "Inorder traversal of the BST: ";
     bst.inorder();
     bst.deleteValue(20);
