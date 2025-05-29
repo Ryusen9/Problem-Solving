@@ -2,18 +2,22 @@
 #include <vector>
 #include <algorithm>
 using namespace std;
+
 struct Student {
     string firstName;
     int rollNumber;
     float cgpa;
 };
+
 vector<Student> students;
+
 bool isRollUnique(int roll) {
     for (auto& s : students) {
         if (s.rollNumber == roll) return false;
     }
     return true;
 }
+
 void addStudent() {
     Student s;
     cout << "Enter First Name: ";
@@ -29,6 +33,7 @@ void addStudent() {
     students.push_back(s);
     cout << "Student added successfully.\n";
 }
+
 void findByRoll() {
     int roll;
     cout << "Enter Roll Number: ";
@@ -41,6 +46,7 @@ void findByRoll() {
     }
     cout << "Student not found.\n";
 }
+
 void findByName() {
     string name;
     cout << "Enter First Name: ";
@@ -54,6 +60,7 @@ void findByName() {
     }
     if (!found) cout << "No student found with that name.\n";
 }
+
 void deleteStudent() {
     int roll;
     cout << "Enter Roll Number: ";
@@ -67,6 +74,7 @@ void deleteStudent() {
     }
     cout << "Student not found.\n";
 }
+
 void updateStudent() {
     int roll;
     cout << "Enter Roll Number to update: ";
@@ -81,7 +89,7 @@ void updateStudent() {
                     cout << "Enter new name: ";
                     cin >> s.firstName;
                     break;
-                case 2:
+                case 2: {
                     int newRoll;
                     cout << "Enter new roll number: ";
                     cin >> newRoll;
@@ -91,6 +99,7 @@ void updateStudent() {
                     }
                     s.rollNumber = newRoll;
                     break;
+                }
                 case 3:
                     cout << "Enter new CGPA: ";
                     cin >> s.cgpa;
@@ -104,9 +113,11 @@ void updateStudent() {
     }
     cout << "Student not found.\n";
 }
+
 bool compareByName(Student a, Student b) {
     return a.firstName < b.firstName;
 }
+
 void displaySortedRecords() {
     if (students.empty()) {
         cout << "No records to display.\n";
@@ -118,6 +129,7 @@ void displaySortedRecords() {
         cout << "Name: " << s.firstName << ", Roll: " << s.rollNumber << ", CGPA: " << s.cgpa << endl;
     }
 }
+
 void countLowCGPA() {
     int count = 0;
     for (auto& s : students) {
@@ -125,10 +137,15 @@ void countLowCGPA() {
     }
     cout << "Number of students with CGPA less than 3.00: " << count << endl;
 }
+
+void countStudents() {
+    cout << "Total number of students: " << students.size() << endl;
+}
+
 int main() {
     int choice;
     do {
-        cout << "\n1. Add Student\n2. Find by Roll\n3. Find by Name\n4. Delete Student\n5. Update Student\n6. Display Sorted Records\n7. Count CGPA < 3.0\n0. Exit\nEnter your choice: ";
+        cout << "\n1. Add Student\n2. Find by Roll\n3. Find by Name\n4. Delete Student\n5. Update Student\n6. Display Sorted Records\n7. Count CGPA < 3.0\n8. Count of Students\n0. Exit\nEnter your choice: ";
         cin >> choice;
         switch (choice) {
             case 1: addStudent(); break;
@@ -138,6 +155,7 @@ int main() {
             case 5: updateStudent(); break;
             case 6: displaySortedRecords(); break;
             case 7: countLowCGPA(); break;
+            case 8: countStudents(); break;
             case 0: cout << "Exiting...\n"; break;
             default: cout << "Invalid choice.\n";
         }
