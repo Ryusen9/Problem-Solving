@@ -11,11 +11,9 @@ int main() {
     long long int newM = m - minVal;
     long long int newK = k - minVal;
     if (newN <= newK) {
-        cout << newN << endl;
-    } else if (newM < newK) {
-        cout << newM << endl;
+        cout << newN + minVal << endl;
     } else {
-        cout << newK << endl;
+        cout << newK + minVal << endl;
     }
     return 0;
 }
